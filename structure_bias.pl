@@ -18,7 +18,8 @@ use strict;
 use warnings;
 use utf8;
 
-my $seq = "Sex8d.flank30.fa";
+my $seq = $ARGV[1] || "Sex8d.flank30.fa"; # sequences file
+my $flank = $ARGV[2] || 30;               # flank length
 my $seq_id = undef;
 my @seq_id = ();
 my %seq = ();
@@ -42,7 +43,7 @@ foreach my $seq_id (@seq_id) {
 	$str = `echo $seq{$seq_id} | RNAfold --noPS`;
 	if ($str =~ /\(\.+\)\S*\s+\(\s*(\S+)\)/) {
 		$mfe = $1;
-		if ($str =~ /\S+\n[\.\(\)]{30}\.[\.\(\)]{30}\s+\(\s*\S+\)/) {
+		if ($str =~ /\S+\n[\.\(\)]{$flank}\.[\.\(\)]{$flank}\s+\(\s*\S+\)/) {
 			print "$seq_id\tLoop\t$mfe\n";
 		} else {
 			print "$seq_id\tStem\t$mfe\n";
