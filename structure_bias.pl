@@ -18,8 +18,8 @@ use strict;
 use warnings;
 use utf8;
 
-my $seq = $ARGV[1] || "Sex8d.flank30.fa"; # sequences file
-my $flank = $ARGV[2] || 30;               # flank length
+my $seq = $ARGV[0] || "Sex8d.flank30.fa"; # sequences file
+my $flank = $ARGV[1] || 30;               # flank length
 my $seq_id = undef;
 my @seq_id = ();
 my %seq = ();
