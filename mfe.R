@@ -20,6 +20,5 @@ t.test(ed, ed30, alternative = "t")$p.value
 t.test(ed, ed60, alternative = "t")$p.value
 t.test(ed, ed100, alternative = "t")$p.value
 
-t.test(ed30, ed60, alternative = "t")$p.value
 t.test(ed60, ed100, alternative = "t")$p.value
 
