@@ -10,7 +10,9 @@ ed60<-as.numeric(ed60$V1)
 ed100<-read.table("ed100.dat")
 ed100<-as.numeric(ed100$V1)
 x<-cbind(bg,ed,ed30,ed60,ed100)
+pdf(width=6, height=6, file = "mfe.pdf")
 boxplot(x, col=2:6, ylab="MFE (kcal/mol)")
+dev.off()
 t.test(bg, ed, alternative = "t")$p.value
 t.test(bg, ed30, alternative = "t")$p.value
 t.test(bg, ed60, alternative = "t")$p.value
