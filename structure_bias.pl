@@ -44,7 +44,7 @@ my $est = undef;
 my $type = undef;
 foreach my $seq_id (@seq_id) {
 	# Predict RNA secondary structure
-	$fold = `echo $seq{$seq_id} | RNAfold --noPS`;
+	$fold = `echo $seq{$seq_id} | RNAfold -T --noPS`;
 	# If a valid RNAfold out found
 	if ($fold =~ /\S+\n(\S+)\s+\(\s*(\S+)\)/) {
 		$str = $1;
