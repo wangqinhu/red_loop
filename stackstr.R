@@ -1,7 +1,7 @@
 setwd("output")
 pdf(width=6, height=6, file = "stack.pdf")
 x<-read.table("class.freq.dat", header = T)
-par(c=mar(4,4,4,4))
+par(mar(4,4,4,4))
 barplot(as.matrix(x),col=2:6, ylab = "Ratio", xlim=c(0, 8.5))
 legend("topright",  rownames(x), pch=19, col=2:6)
 dev.off()
