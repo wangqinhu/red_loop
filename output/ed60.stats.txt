@@ -1,0 +1,5 @@
+hairpin_loop:    3275
+interior_loop:     558
+multi_loop:     223
+stem:     739
+free:       3
